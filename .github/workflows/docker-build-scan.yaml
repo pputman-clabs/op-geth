@@ -33,8 +33,7 @@ jobs:
           context: .
           dockerfile: Dockerfile
           push: true
-          trivy: false
-          #trivy: ${{ startsWith(github.ref, 'refs/heads/celo') }}
+          trivy: ${{ startsWith(github.ref, 'refs/heads/celo') }}
 
   build-scan-container-bootnode:
     runs-on: ['self-hosted', 'org', '8-cpu']
@@ -59,5 +58,4 @@ jobs:
           context: .
           dockerfile: Dockerfile.bootnode
           push: true
-          trivy: false
-          #trivy: ${{ startsWith(github.ref, 'refs/heads/celo') }}
+          trivy: ${{ startsWith(github.ref, 'refs/heads/celo') }}
